@@ -49,7 +49,7 @@ const Formulario = (modalVisible, setModalVisible) => {
           </View> */}
 
                     <View>
-                        <Text style={style.label}>Sintomas</Text>
+                        <Text style={style.label}>Algo X</Text>
                         <TextInput backgroundColor="gray" placeholder='Ingrese sus sintomas'>
 
                         </TextInput>
@@ -59,7 +59,7 @@ const Formulario = (modalVisible, setModalVisible) => {
                         <Pressable style={style.btnGuardar}
                             onPress={() => { CerrarModal }}
                         >
-                            <Text color="black">Guardar</Text>
+                            <Text>Guardar</Text>
                         </Pressable>
                         <Pressable>
                             <Text color="black">Editar</Text>
@@ -77,7 +77,7 @@ const style = StyleSheet.create({
         flex: 1,
     },
     btnTextoNuevaCita: {
-        color: 'black'
+        Color: 'black'
     },
     titulo: {},
     tituloBold: {},
@@ -97,17 +97,19 @@ const style = StyleSheet.create({
     inputSintomas: {
         fontWeight: '100'
     },
+
     btnGuardar: {
+        textDecorationColor: '#FFF',
+        color: '#FFF',
         backgroundColor: 'purple',
         borderRadius: 10,
         paddingHorizontal: 20,
         paddingVertical: 10,
-        width: 'auto',
-        color: 'black'
+        width: 'auto'
     },
+
     btnTextoGuardar: {},
 });
-export default Formulario;
-
 //rafce
 //ffc crear una funcion vacia
+export default Formulario;
