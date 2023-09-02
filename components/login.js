@@ -34,12 +34,16 @@ function LoginScreen() {
             placeholder="Nombre de usuario"
             value={username}
             onChangeText={setUsername}
+            backgroundColor="#A1A1A1"
+            placeholderTextColor={"#000"}
           />
           <TextInput
             placeholder="Contraseña"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
+            backgroundColor="#A1A1A1"
+            placeholderTextColor={"#000"}
           />
           <Button title="Iniciar Sesión" onPress={handleLogin} />
         </View>
@@ -73,13 +77,6 @@ const style = StyleSheet.create({
     padding: 15,
     borderRadius: 10
   },
-
-  btnNuevaCita: {
-
-  },
-  btnTextoNuevaCita: {
-
-  }
 });
 
 export default LoginScreen;

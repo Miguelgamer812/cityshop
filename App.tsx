@@ -23,6 +23,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { enableScreens } from 'react-native-screens';
 import 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler';
 
 enableScreens();
 const Stack = createStackNavigator();
