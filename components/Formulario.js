@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 import {
     SafeAreaView, ScrollView,
-    TextInput, View, Modal, Text, DatePicker,
-    StyleSheet, Pressable,
-} from 'react-native'
+    TextInput, View, Modal, Text,
+    StyleSheet, Pressable, Button
+} from 'react-native';
+
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const Formulario = (modalVisible, setModalVisible) => {
 
     const CerrarModal = () => {
+        const [modalVisible, setModalVisible] = useState(false)
 
+        const cerrarModal = () => {
+            setModalVisible(false)
+            console.log('Botón presionado');
+        }
     }
+
+    const [date, setDate] = useState(new Date());
+    const [showPicker, setShowPicker] = useState(false); // Estado para controlar la visibilidad del DateTimePicker
+
+    const handleShowPicker = () => {
+        setShowPicker(true); // Cuando se toca el botón, muestra el DateTimePicker
+    };
+
+    const handleDateChange = (event, selectedDate) => {
+        setShowPicker(false); // Oculta el DateTimePicker después de seleccionar una fecha
+        if (event.type === 'set') {
+            setDate(selectedDate);
+        }
+    };
+
     return (
         <Modal>
             <SafeAreaView style={style.contenido}>
@@ -38,15 +61,19 @@ const Formulario = (modalVisible, setModalVisible) => {
                         </TextInput>
                     </View>
 
-                    {/* <View>
-                        <Text style={style.label}>Fecha de alta</Text>
-                        <View style={style.fechaContenedor}>
-                            <DatePicker
-                                date={fecha}
-                                locale='es'
+                    <View>
+
+                        <Text>Elija la fecha</Text>
+                        <Button title="Seleccionar Fecha" onPress={handleShowPicker} />
+                        {showPicker && (
+                            <DateTimePicker
+                                value={date}
+                                mode="date"
+                                display="default"
+                                onChange={handleDateChange}
                             />
-                        </View>
-                    </View> */}
+                        )}
+                    </View>
 
                     <View>
                         <Text style={style.label}>Precio de producto</Text>
@@ -60,9 +87,6 @@ const Formulario = (modalVisible, setModalVisible) => {
                             onPress={() => { CerrarModal }}
                         >
                             <Text>Guardar</Text>
-                        </Pressable>
-                        <Pressable>
-                            <Text color="black">Editar</Text>
                         </Pressable>
                     </View>
                 </ScrollView>

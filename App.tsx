@@ -40,11 +40,7 @@ const App = () => {
   //   </SafeAreaProvider>
 
   // );
-  const [modalVisible, setModalVisible] = useState(false)
-
-  const cerrarModal = () => {
-    setModalVisible(false)
-  }
+  
   return (
     <SafeAreaView style={style.contains}>
       <NavigationContainer>
